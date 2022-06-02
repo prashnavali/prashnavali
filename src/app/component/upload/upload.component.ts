@@ -1,6 +1,11 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { ToastrService } from 'src/app/service/toastr.service';
+import {Paper} from 'src/app/model/paper';
+import { ApiService } from 'src/app/service/api.service';
+import { HttpErrorResponse } from '@angular/common/http';
+
 
 export interface DialogData {
   url:string
@@ -17,17 +22,50 @@ export class UploadComponent implements OnInit {
   constructor(
     public dialogRef: MatDialogRef<UploadComponent>,
     @Inject(MAT_DIALOG_DATA) public data: DialogData,
-    private _snackBar: MatSnackBar
+    private _snackBar: MatSnackBar,
+    private toast:ToastrService,
+    public api:ApiService
   ) {}
-  getUrl!: string;
+  url!: string;
+  name!:string;
+  description!:string;
+
+  
+
   onNoClick(): void {
     this.dialogRef.close();
   }
-  onOkClick(url:string){
-    
-      this._snackBar.open("File Added", url);
-    this.dialogRef.close();
+  
+  
+  
+  onOkClick(url:string, name:string, description:string){
+    var paper:Paper={
+      id:undefined,
+      url,
+      name,
+      description,
+      upload_date:new Date,
+      upvote:0
 
+    }
+
+    // this.api.httpPost('/papers', paper).subscribe(
+    //  (success)=>{
+    //    alert("File added");
+    //  }
+
+    // );
+    
+    
+    console.log("Paper object is "+paper);
+    
+    
+    
+    this.toast.open("Normal", "File Added", url);
+    this.dialogRef.close();
+    console.log(url);
+    console.log(name);
+    console.log(description);
     
 
 

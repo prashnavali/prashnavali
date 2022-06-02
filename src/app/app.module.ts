@@ -11,6 +11,9 @@ import { PaperComponent } from './component/paper/paper.component';
 import { UploadComponent } from './component/upload/upload.component';
 import { MaterialModule } from './material.module';
 import { FormsModule } from '@angular/forms';
+import { ToastrService } from './service/toastr.service';
+import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './service/api.service';
 
 @NgModule({
   declarations: [
@@ -20,15 +23,17 @@ import { FormsModule } from '@angular/forms';
     PaperComponent,
     UploadComponent
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
     MaterialModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ToastrService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

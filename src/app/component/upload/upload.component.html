@@ -1,13 +1,25 @@
 <!-- <p>upload works!</p> -->
 <div mat-dialog-content  >
     <p >Do you want to enter the file url?</p>
-    <mat-form-field appearance="fill">
-        <mat-label>Url</mat-label>
-        <input matInput [(ngModel)]="getUrl">
 
+    
+    <mat-form-field appearance="fill" class="submit-form">
+        <mat-label>Name</mat-label>
+        <input matInput [(ngModel)]="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="submit-form">
+        <mat-label>Url</mat-label>
+        <input matInput [(ngModel)]="url">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill" class="submit-form">
+        <mat-label>Description</mat-label>
+        <textarea matInput [(ngModel)]="description"></textarea>
     </mat-form-field>
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button (click)="onOkClick(getUrl)">Ok</button>
+    <button mat-button (click)="onOkClick(name, url, description)">Ok</button>
 </div>
