@@ -10,6 +10,7 @@ import { HomeComponent } from './component/home/home.component';
 import { PaperComponent } from './component/paper/paper.component';
 import { UploadComponent } from './component/upload/upload.component';
 import { MaterialModule } from './material.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { MaterialModule } from './material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

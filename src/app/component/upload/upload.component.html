@@ -1,11 +1,13 @@
 <!-- <p>upload works!</p> -->
-<div mat-dialog-content>
-    <p>Do you want to enter the file url?</p>
+<div mat-dialog-content  >
+    <p >Do you want to enter the file url?</p>
     <mat-form-field appearance="fill">
         <mat-label>Url</mat-label>
-        <input matInput>
+        <input matInput [(ngModel)]="getUrl">
+
     </mat-form-field>
 </div>
 <div mat-dialog-actions>
     <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button (click)="onOkClick(getUrl)">Ok</button>
 </div>
