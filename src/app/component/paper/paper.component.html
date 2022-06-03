@@ -6,12 +6,12 @@
             <p>{{linkData.description}}</p>
         </div>
     </a> -->
-    {{ paper.name }} <br> Description: {{ paper.description }} <br> Created: {{ paper.upload_date | date:'yyyy-MM-dd hh:mm:ss' }}
+    {{ paper.name }} <br> Description: {{ paper.description }} <br> Created: {{ paper.date | date:'yyyy-MM-dd hh:mm:ss' }}
 </div>
 
 <button type=" button" class="btn btn-outline-success" (click)="upVote();">
     <fa-icon [icon]="faUpVote"></fa-icon>
-</button> {{ paper.upvote }}
+</button> {{ paper.vote }}
 <button type="button" class="btn btn-outline-danger" (click)="downVote()">
     <fa-icon [icon]="faDownVote"></fa-icon>
 </button>

@@ -3,6 +3,6 @@ export interface Paper {
     url: string,
     name: string,
     description: string,
-    upvote: number,
-    upload_date: Date
+    vote: number,
+    date: Date
 }

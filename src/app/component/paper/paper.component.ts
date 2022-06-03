@@ -26,20 +26,20 @@ export class PaperComponent implements OnInit {
   }
 
   savePaper(): void {
-    // this.api.httpPost('/papers', this.paper).subscribe(
-    //   (res: any) => {
-    //     this.toast.open('success', 'Updated Successfully', res);
-    //   }
-    // );
+    this.api.httpPost('/papers', this.paper).subscribe(
+      (res: any) => {
+        this.toast.open('success', 'Updated Successfully', res);
+      }
+    );
   }
 
   upVote(): void {
-    this.paper.upvote += 1;
+    this.paper.vote += 1;
     this.savePaper();
   }
 
   downVote(): void {
-    this.paper.upvote -= 1;
+    this.paper.vote -= 1;
     this.savePaper();
   }
 

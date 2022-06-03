@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Paper } from 'src/app/model/paper';
+import { ApiService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'pv-home',
@@ -8,25 +9,18 @@ import { Paper } from 'src/app/model/paper';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private api: ApiService) { }
 
-  papers : Paper[] = [{
-    id: 1,
-    upvote: 0,
-    url: 'nothing.com',
-    name: 'Software Reliablily',
-    description: 'Exam of software reliablilty',
-    upload_date: new Date
-  }, {
-    id: 2,
-    upvote: 0,
-    url: 'nothing.com',
-    name: 'Software Reliablily',
-    description: 'Exam of software reliablilty',
-    upload_date: new Date
-  }]
+  getData(){
+    this.api.httpGet('/papers').subscribe((res:any)=>{
+      this.papers = res;
+    });
+  }
+
+  papers : Paper[] = []
 
   ngOnInit(): void {
+    this.getData();
   }
 
 }
