@@ -28,7 +28,7 @@ export class PaperComponent implements OnInit {
   savePaper(): void {
     this.api.httpPost('/papers', this.paper).subscribe(
       (res: any) => {
-        this.toast.open('success', 'Updated Successfully', res);
+        this.toast.open('success', 'Updated Successfully', res.name);
       }
     );
   }
