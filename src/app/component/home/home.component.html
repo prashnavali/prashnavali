@@ -1,4 +1,7 @@
-<div *ngFor="let paper of papers">
-    <pv-paper [paper]="paper"></pv-paper>
-    <br><br>
-</div>
+<mat-grid-list cols="3" rowHeight="2:1">
+    <div *ngFor="let paper of papers">
+        <mat-grid-tile appearance="fill">
+            <pv-paper [paper]="paper"></pv-paper>
+        </mat-grid-tile>
+    </div>
+</mat-grid-list>

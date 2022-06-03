@@ -26,9 +26,10 @@ import { MatDialogModule, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import { MatGridListModule } from '@angular/material/grid-list';
 @NgModule({
-  imports: [MatInputModule, MatFormFieldModule, MatButtonToggleModule, MatCardModule, MatChipsModule, MatButtonModule, MatSidenavModule, MatToolbarModule, MatDividerModule, MatIconModule, MatMenuModule, MatListModule, MatRippleModule, MatTabsModule, MatTooltipModule, MatTableModule, MatPaginatorModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatSnackBarModule, MatSortModule, MatRadioModule, MatDialogModule, MatCheckboxModule, MatAutocompleteModule, MatSlideToggleModule, DragDropModule],
-  exports: [MatInputModule, MatFormFieldModule, MatButtonToggleModule, MatCardModule, MatChipsModule, MatButtonModule, MatSidenavModule, MatToolbarModule, MatDividerModule, MatIconModule, MatMenuModule, MatListModule, MatRippleModule, MatTabsModule, MatTooltipModule, MatTableModule, MatPaginatorModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatSnackBarModule, MatSortModule, MatRadioModule, MatDialogModule, MatCheckboxModule, MatAutocompleteModule, MatSlideToggleModule, DragDropModule],
+  imports: [MatInputModule, MatFormFieldModule, MatButtonToggleModule, MatCardModule, MatChipsModule, MatButtonModule, MatSidenavModule, MatToolbarModule, MatDividerModule, MatIconModule, MatMenuModule, MatListModule, MatRippleModule, MatTabsModule, MatTooltipModule, MatTableModule, MatPaginatorModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatSnackBarModule, MatSortModule, MatRadioModule, MatDialogModule, MatCheckboxModule, MatAutocompleteModule, MatSlideToggleModule, DragDropModule, MatGridListModule],
+  exports: [MatInputModule, MatFormFieldModule, MatButtonToggleModule, MatCardModule, MatChipsModule, MatButtonModule, MatSidenavModule, MatToolbarModule, MatDividerModule, MatIconModule, MatMenuModule, MatListModule, MatRippleModule, MatTabsModule, MatTooltipModule, MatTableModule, MatPaginatorModule, MatSelectModule, MatDatepickerModule, MatNativeDateModule, MatSnackBarModule, MatSortModule, MatRadioModule, MatDialogModule, MatCheckboxModule, MatAutocompleteModule, MatSlideToggleModule, DragDropModule, MatGridListModule],
   providers: [
     { provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: { hasBackdrop: true, disableClose: true } }
   ]

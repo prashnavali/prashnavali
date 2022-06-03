@@ -1,17 +1,24 @@
-<div (click)="goToLink(paper.url)">
-    <!-- <a class="preview" [href]="linkData.url">
+<div class="text-center">
+
+    <div (click)="goToLink(paper.url)">
+        <!-- <a class="preview" [href]="linkData.url">
         <img [src]="linkData.image" />
         <div>
             <h4>{{linkData.title}}</h4>
             <p>{{linkData.description}}</p>
         </div>
     </a> -->
-    {{ paper.name }} <br> Description: {{ paper.description }} <br> Created: {{ paper.date | date:'yyyy-MM-dd hh:mm:ss' }}
+        <h4 class="display-6">{{ paper.name }} </h4> <br>
+        <div class="lead text-wrap">{{ paper.description }}</div> <br> Created: {{ paper.date | date:'yyyy-MM-dd hh:mm:ss' }}
+    </div>
+
 </div>
 
-<button type=" button" class="btn btn-outline-success" (click)="upVote();">
-    <fa-icon [icon]="faUpVote"></fa-icon>
-</button> {{ paper.vote }}
-<button type="button" class="btn btn-outline-danger" (click)="downVote()">
-    <fa-icon [icon]="faDownVote"></fa-icon>
-</button>
+<div class="d-flex align-items-center justify-content-center text-center">
+    <button type=" button" class="btn btn-outline-success" (click)="upVote();">
+        <fa-icon [icon]="faUpVote"></fa-icon>
+    </button> &nbsp;&nbsp; {{ paper.vote }} &nbsp;&nbsp;
+    <button type="button" class="btn btn-outline-danger" (click)="downVote()">
+        <fa-icon [icon]="faDownVote"></fa-icon>
+    </button>
+</div>
