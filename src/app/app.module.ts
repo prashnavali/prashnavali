@@ -11,9 +11,10 @@ import { PaperComponent } from './component/paper/paper.component';
 import { UploadComponent } from './component/upload/upload.component';
 import { MaterialModule } from './material.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ApiService } from './service/api.service';
+import { FormsModule } from '@angular/forms';
 import { ToastrService } from './service/toastr.service';
 import { HttpClientModule } from '@angular/common/http';
+import { ApiService } from './service/api.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { HttpClientModule } from '@angular/common/http';
     PaperComponent,
     UploadComponent
   ],
+  
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -30,7 +32,8 @@ import { HttpClientModule } from '@angular/common/http';
     NgbModule,
     MaterialModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
   ],
   providers: [
     ApiService,
