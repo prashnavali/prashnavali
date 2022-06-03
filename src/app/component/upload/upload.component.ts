@@ -37,8 +37,8 @@ export class UploadComponent implements OnInit {
   }
 
 
-
   onOkClick(name: string, url: string, description: string) {
+    
     var paper: Paper = {
       id: undefined,
       url,
@@ -47,7 +47,6 @@ export class UploadComponent implements OnInit {
       date: new Date,
       vote: 0
     }
-
     this.api.httpPost('/papers', paper).subscribe(
       (success) => {
         this.toast.open('success', 'Paper added', 'File added')
@@ -56,16 +55,11 @@ export class UploadComponent implements OnInit {
 
 
     console.log("Paper object is " + paper);
-
-
-
     this.toast.open("Normal", "File Added", url);
     this.dialogRef.close();
     console.log(url);
     console.log(name);
     console.log(description);
-
-
 
   }
   ngOnInit(): void {
