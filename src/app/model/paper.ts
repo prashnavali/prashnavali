@@ -1,5 +1,5 @@
 export interface Paper {
-    id: number,
+    id: any,
     url: string,
     name: string,
     description: string,
