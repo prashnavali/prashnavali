@@ -1,25 +1,27 @@
 <!-- <p>upload works!</p> -->
-<div mat-dialog-content  >
+<div mat-dialog-content >
     <p >Do you want to enter the file url?</p>
 
-    
-    <mat-form-field appearance="fill" class="submit-form">
+    <mat-form-field appearance="fill" class="w-100" >
         <mat-label>Name</mat-label>
-        <input matInput [(ngModel)]="name">
+        <input matInput [(ngModel)]="name" #valid="ngModel" required>
+       
     </mat-form-field>
 
-    <mat-form-field appearance="fill" class="submit-form">
+    <mat-form-field appearance="fill" class="w-100" >
         <mat-label>Url</mat-label>
-        <input matInput [(ngModel)]="url">
+        <input matInput [(ngModel)]="url" #validUrl="ngModel"  required>
     </mat-form-field>
 
 
-    <mat-form-field appearance="fill" class="submit-form">
+    <mat-form-field appearance="fill" class="w-100">
         <mat-label>Description</mat-label>
-        <textarea matInput [(ngModel)]="description"></textarea>
+        <textarea matInput [(ngModel)]="description" required></textarea>
     </mat-form-field>
 </div>
-<div mat-dialog-actions>
-    <button mat-button (click)="onNoClick()">No Thanks</button>
-    <button mat-button (click)="onOkClick(name, url, description)">Ok</button>
+<div mat-dialog-actions class='col-xs-3'>
+    <button class="btn-block"  class="btn btn-outline-primary my-5 my-sm-0 mr-5"  (click)="onNoClick()">No Thanks</button>
+    <button class="btn-block"  class="btn btn-outline-primary my-5 my-sm-0 ml-5"  [disabled]="!name || !url || !description"  (click)="onOkClick(name, url, description)">Ok</button>
+
+    
 </div>

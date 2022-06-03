@@ -13,7 +13,7 @@ export class NavbarComponent implements OnInit {
 
   uploadDialog(): void {
     const dialogRef = this.dialog.open(UploadComponent, {
-      width: '300px'
+      width: '350px'
     });
   }
   ngOnInit(): void {
