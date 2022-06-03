@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiEndpoint: 'pata ni kab denge ye log'
+  apiEndpoint: 'https://prashnavali.herokuapp.com'
 };
 
 /*

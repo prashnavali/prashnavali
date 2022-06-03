@@ -10,6 +10,10 @@ import { HomeComponent } from './component/home/home.component';
 import { PaperComponent } from './component/paper/paper.component';
 import { UploadComponent } from './component/upload/upload.component';
 import { MaterialModule } from './material.module';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ApiService } from './service/api.service';
+import { ToastrService } from './service/toastr.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -24,9 +28,14 @@ import { MaterialModule } from './material.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     NgbModule,
-    MaterialModule
+    MaterialModule,
+    FontAwesomeModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    ApiService,
+    ToastrService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
